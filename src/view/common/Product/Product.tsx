@@ -1,3 +1,6 @@
+import {ModifyCart} from "../ModifyCart/ModifyCart.tsx";
+import {useState} from "react";
+
 type ProductData = {
     id: number,
     name: string,
@@ -14,6 +17,12 @@ type ProductProps = {
 const images: Record<string, string> = import.meta.glob('../../../assets/products/*', { eager: true, import: 'default' });
 
 export function Product({ data }: ProductProps) {
+    const [isActive, setIsActive] = useState(false);
+
+    const addToCart = () => {
+        setIsActive(true)
+    }
+
     return (
         <div className="w-70 h-125 mr-2 mb-2 rounded-[0.3rem] flex justify-center items-center bg-gradient-to-r from-cyan-500 to-emerald-500">
             <div className="w-69 h-124 bg-blue-950 rounded-[0.3rem] flex justify-center items-center mx-auto">
@@ -23,7 +32,15 @@ export function Product({ data }: ProductProps) {
                     <h3 className="text-yellow-400">{data.price} <small>{data.currency}</small></h3>
                     {data.stock > 0 && <span className="!px-3 !py-1 text-sm font-semibold !my-3 text-white bg-green-700 rounded-[0.5rem]">In Stock</span>}
                     {data.stock === 0 && <span className="!px-3 !py-1 text-sm font-semibold !my-3 text-white bg-red-700 rounded-[0.5rem]">Out of Stock</span>}
-                    <button className=" w-full !px-3 !py-2 text-sm font-semibold !my-3 text-white bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-[0.5rem] hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 hover:transition-all cursor-pointer">Add to Cart</button>
+
+                    {
+                        isActive ? (
+                            <ModifyCart />
+                        ) : (
+                            <button className=" w-full !px-3 !py-2 text-sm font-semibold !my-3 text-white bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-[0.5rem] hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 hover:transition-all cursor-pointer"
+                                    onClick={addToCart}>Add to Cart</button>
+                        )
+                    }
                 </div>
             </div>
         </div>

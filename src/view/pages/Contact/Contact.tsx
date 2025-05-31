@@ -21,15 +21,15 @@ export function Contact() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 !p-4">
-            <div className="w-full max-w-2xl bg-white rounded-lg shadow-xl !p-6 relative">
-                <h2 className="text-4xl font-bold text-center text-slate-800 !mb-8">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-emerald-500 !p-1">
+            <div className="w-full max-w-2xl bg-blue-950 rounded-lg shadow-xl !p-6 relative">
+                <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-cyan-500 to-emerald-500 bg-clip-text text-transparent !mb-8">
                     Contact Us
                 </h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="!space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label className="block text-gray-700 font-semibold !mb-1">
+                            <label className="block text-white font-semibold !mb-1">
                                 Name
                             </label>
                             <input
@@ -50,7 +50,7 @@ export function Contact() {
                             )}
                         </div>
                         <div>
-                            <label className="block text-gray-700 font-semibold !mb-1">
+                            <label className="block text-white font-semibold !mb-1">
                                 Phone
                             </label>
                             <input
@@ -71,7 +71,7 @@ export function Contact() {
                             )}
                         </div>
                         <div className="md:col-span-2">
-                            <label className="block text-gray-700 font-semibold !mb-1">
+                            <label className="block text-white font-semibold !mb-1">
                                 Email
                             </label>
                             <input
@@ -93,7 +93,7 @@ export function Contact() {
                         </div>
                     </div>
                     <div>
-                        <label className="block text-gray-700 font-semibold !mb-1 !mt-5">
+                        <label className="block text-white font-semibold !mb-1 !mt-5">
                             Subject
                         </label>
                         <input
@@ -114,7 +114,7 @@ export function Contact() {
                         )}
                     </div>
                     <div>
-                        <label className="block text-gray-700 font-semibold !mb-1 !mt-5">
+                        <label className="block text-white font-semibold !mb-1 !mt-5">
                             Message
                         </label>
                         <textarea
@@ -135,7 +135,7 @@ export function Contact() {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-slate-800 hover:bg-slate-900 text-white font-semibold !py-2 rounded-md transition duration-300 !mt-5"
+                        className="w-full text-white bg-gradient-to-r from-cyan-500 to-emerald-500 hover:bg-slate-900 font-semibold !py-2 rounded-md hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 hover:transition-all cursor-pointer !mt-5"
                     >
                         Send Message
                     </button>

@@ -5,7 +5,7 @@ import { Contact } from "../../pages/Contact/Contact.tsx";
 
 export function MainContent() {
     return (
-        <div className="relative min-h-screen w-full bg-gradient-to-br from-slate-800 to-slate-900">
+        <div className="relative min-h-screen w-full bg-gradient-to-br from-slate-900 to-slate-800">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl"></div>

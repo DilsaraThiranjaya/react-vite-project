@@ -35,7 +35,9 @@ export function Product({ data }: ProductProps) {
 
                     {
                         isActive ? (
-                            <ModifyCart />
+                            <ModifyCart data={{
+                                product: data
+                            }} />
                         ) : (
                             <button className=" w-full !px-3 !py-2 text-sm font-semibold !my-3 text-white bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-[0.5rem] hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20 hover:transition-all cursor-pointer"
                                     onClick={addToCart}>Add to Cart</button>

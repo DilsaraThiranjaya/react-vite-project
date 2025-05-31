@@ -1,8 +1,30 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import type {CartItem} from "../../../model/CartItem.ts";
 
-export function ModifyCart() {
+interface ModifyCartProps {
+    data: any
+}
+
+export const itemList:CartItem[] = [];
+
+export function ModifyCart({data}:ModifyCartProps) {
 
     const [itemCount, setItemCount] = useState(1);
+
+    useEffect(() => {
+        const existingItem = itemList.find(item => item.product.id === data.product.id);
+
+        if (existingItem) {
+            existingItem.itemCount = itemCount;
+        } else {
+            itemList.push({
+                product: data.product,
+                itemCount: itemCount
+            })
+        }
+    }, [itemCount, data]);
+
+    console.log(itemList)
 
     const increaseItemCount = () => {
         setItemCount(prevValue => prevValue + 1);
